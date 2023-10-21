@@ -1,6 +1,6 @@
 void allMode(uint8_t firstPin, uint8_t lastPin, byte IO)
 {
-    amtOfPins = lastPin - firstPin + 1
+    uint8_t amtOfPins = lastPin - firstPin + 1;
     for (uint8_t counter = firstPin; counter <= lastPin; counter++)
     {
         pinMode(counter, IO);
