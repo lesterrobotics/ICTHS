@@ -26,7 +26,9 @@ void setup()
 {
     Serial.begin( 9600 );
     allMode( 2, 13, OUTPUT );
-    shiftOut( DATA_PIN, SHIFT_PIN, MSBFIRST, data );
+    for ( byte i = 0; i < 4; i++) {
+        shiftOut( DATA_PIN, SHIFT_PIN, MSBFIRST, data );
+    }
     digitalWrite( LATCH_PIN, HIGH );
     digitalWrite( LATCH_PIN, LOW );
 }
