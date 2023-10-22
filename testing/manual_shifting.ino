@@ -1,6 +1,9 @@
 #define DATA_PIN 11
 #define SHIFT_PIN 13
 #define LATCH_PIN 12
+#define AMT_SHIFT 4
+
+int data = 0b00000001;
 
 void allMode( uint8_t firstPin, uint8_t lastPin, byte IO )
 {
@@ -20,7 +23,7 @@ void allMode( uint8_t firstPin, uint8_t lastPin, byte IO )
     }
 }
 
-void shiftWrite( unsigned long data ) {
+void shiftWrite( int ms ) {
     
 }
 
