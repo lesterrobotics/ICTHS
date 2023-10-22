@@ -5,7 +5,7 @@
 void allMode( uint8_t firstPin, uint8_t lastPin, byte IO )
 {
     uint8_t amtOfPins = lastPin - firstPin + 1;
-    for ( uint8_t counter = firstPin; counter <= lastPin; counter++ )
+    for ( uint8_t pin = firstPin; pin <= lastPin; pin++ )
     {
         pinMode( counter, IO );
         Serial.print( "Pin " );
