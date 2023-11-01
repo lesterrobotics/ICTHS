@@ -1,13 +1,12 @@
-/*                                        *
- *  Setup all 396 pins using 50 SR (Shift *
- *  Registers). Find a way to make life   *
- *  easier by making certain functions    *
- *  and objects.                          *
- *                                        *
- *  Idea 1: digitalWrite                  *
- *  Being able to write a certain         *
- *  function similar to digitalWrite.     *
- *                                        */
+/*  Code made by Lester Matthew G. Sollano - ICTHS Robotics Team Lead Programmer    
+ *
+ *  Setup all 408 pins using 51 SR (Shift Registers). Find a way to make life
+ *  easier by making certain functions and objects.                      
+ *                                        
+ *  Idea 1: digitalWrite                  
+ *  Being able to write a certain        
+ *  function similar to digitalWrite.     
+ */
 
 #define latchPin 2
 
@@ -15,12 +14,12 @@ class SR_Object
 {
     private:
     byte dataPin, shiftPin;
-    byte data = 0b00000000;    // Each bit represents one RDP.
+    uint16_t data = 0b0000000000000000;    // Each bit represents one RDP.
 
     public:
     byte SR_id;    // Used to identify which SR.
     byte RDP[16];    // Register Digital Pin (RDP)
-    SR ( byte DP, byte SP, int RDP_first, byte ID )    // RDP_first represents the first pin within a set of 8 pins that the register will use.
+    SR ( byte DP, byte SP, int RDP_first, byte ID )    // RDP_first represents the first pin within a set of 16 pins that the register will use.
     {
         SR_id = ID
         dataPin = DP;
@@ -31,32 +30,34 @@ class SR_Object
         }
     }
 
-    byte is_present( int certainRDP )
+    byte is_present ( int certainRDP )
     {
         for ( byte i = 0; i < 16; i++ )    // Loops through the SR's RDP to see if a certain RDP is present.
         {
             if ( certainRDP == RDP[i] )
             {
-                return Sr_id;    // Returns which SR has the certain RDP.
+                return SR_id;    // Returns which SR has the certain RDP.
             }
         }
         return 255;    // Otherwise it returns 255 indicating false.
     }
 };
 
-SR_Object ShiftRegisters[25] = {    SR ( 3, 4, 0 ),
-                                    SR ( 5, 6, 17 ),
-                                    SR ( 7, 8, 33 ),
-                                    SR ( 9, 10, 49 ),
-                                    SR ( 11, 12, 65 ),
-                                    SR ( 13, 14, 81 ),
+//Setting up SR Array
+SR_Object ShiftRegisters[25] = {
+                                    SR ( 3, 4, 0 ), SR ( 5, 6, 17 ), SR ( 7, 8, 33 ), SR ( 9, 10, 49 ), SR ( 11, 12, 65 ),
+                                    SR ( 13, 14, 81 ), SR ( 15, 16, 97 ), SR ( 17, 18, 113 ), SR ( 19, 20, 129 ), SR ( 21, 22, 145 ),
+                                    SR ( 23, 24, 161 ), SR ( 25, 26, 177 ), SR ( 27, 28, 193 ), SR ( 29, 30, 209 ), SR ( 31, 32, 225 ),
+                                    SR ( 33, 34, 81 ), SR ( 35, 16, 97 ), SR ( 37, 38, 113 ), SR ( 39, 40, 129 ), SR ( 41, 42, 145 ),
+                                    SR ( 43, 44, 81 ), SR ( 45, 46, 97 ), SR ( 47, 48, 113 ), SR ( 49, 50, 129 ), SR ( 51, 52, 145 ),
+                                    SR ( 53, 54,  )
 
-byte checkAll ( int RDP ) 
+byte checkAll ( int RDP )    // Find which SR contains a specific RDP.
 {
     
 }
 
-void RDW ( int RDP, byte IO )
+void RDW ( int RDP, byte IO )    // Register Digital Write
 {
     
 }
