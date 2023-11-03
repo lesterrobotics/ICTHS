@@ -1,12 +1,5 @@
-/*  Code made by Lester Matthew G. Sollano - ICTHS Robotics Team Lead Programmer    
- *
- *  Setup all 408 pins using 51 SR (Shift Registers). Find a way to make life
- *  easier by making certain functions and objects.                      
- *                                        
- *  Idea 1: digitalWrite                  
- *  Being able to write a certain        
- *  function similar to digitalWrite.     
- */
+//  Code made by Lester Matthew G. Sollano - ICTHS Robotics Team Lead Programmer    
+
 
 #define latchPin 2
 
@@ -51,6 +44,7 @@ SR_Object ShiftRegisters[25] = {
                                     SR ( 33, 34, 241, 15 ), SR ( 35, 16, 97, 16 ), SR ( 37, 38, 113, 17 ), SR ( 39, 40, 129, 18 ), SR ( 41, 42, 145, 19 ),
                                     SR ( 43, 44, 321, 20 ), SR ( 45, 46, 97, 21 ), SR ( 47, 48, 113, 22 ), SR ( 49, 50, 129, 23 ), SR ( 51, 52, 145, 24 ),
                                     SR ( 53, 54,33 , 25 )
+}
 
 byte checkAll ( int RDP )    // Find which SR contains a specific RDP.
 {
