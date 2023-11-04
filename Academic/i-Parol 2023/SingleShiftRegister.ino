@@ -2,9 +2,13 @@
 
 // Class Constructor:
 // ShiftRegisterClass objectName ( dataPin, clockPin )
+// dataPin - DS Pin of 74HC595
+// clockPin - SHCP Pin of 74HC595
 
 // Functions:
 // write ( pin, state )
+// pin - output pins of 74HC595 (1-8 only)
+// state - HIGH, LOW
 
 int latchPin = 2;
 
