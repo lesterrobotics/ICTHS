@@ -64,15 +64,6 @@ void allMode( uint8_t firstPin, uint8_t lastPin, byte IO )
   for ( uint8_t counter = firstPin; counter <= lastPin; counter++ )
   {
     pinMode( counter, IO );
-    Serial.print( "Pin " );
-    Serial.print( counter );
-    Serial.print( " set as " );
-    if ( IO == INPUT )
-    {
-      Serial.println( "INPUT" );
-    } else {
-      Serial.println( "OUTPUT" );
-    }
   }
 }
 
