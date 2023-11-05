@@ -50,7 +50,7 @@ class ShiftRegisterClass
       }
     }
     dataInt = binStrToInt ( dataStr );
-    shiftOut ( dataPin, clockPin, MSBFIRST, dataInt );
+    shiftOut ( dataPin, clockPin, LSBFIRST, dataInt );
     digitalWrite ( latchPin, HIGH );
     digitalWrite ( latchPin, LOW );
   }
